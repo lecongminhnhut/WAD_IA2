@@ -38,3 +38,27 @@ Sau đó báo:
 - Lệnh Git đề xuất để tôi kiểm tra và commit.
 
 Dừng lại và chờ tôi xác nhận trước khi làm B1.
+
+## Prompt 002 — B1 — Add to Cart
+
+Ngày: 2026-10-28
+
+Phạm vi: B1 / kiểm thử
+
+Công cụ: Codex (GPT-5)
+
+Prompt:
+
+Đọc README.md và app.js trước khi sửa code. Hãy chỉ hoàn thành B1 — Add to Cart.
+
+Yêu cầu:
+1. Chỉ sử dụng một click event listener được gắn trên phần tử #catalogue, không gắn listener riêng lên từng nút Add.
+2. Dùng event delegation và event.target.closest('.card') để tìm thẻ sản phẩm.
+3. Lấy mã sản phẩm từ card.dataset.id và cập nhật số lượng trong cart.
+4. Bỏ qua thao tác click không đến từ nút .add.
+5. Nút Add có class disabled hoặc sản phẩm có trạng thái Sold out phải không làm thay đổi giỏ hàng.
+6. Cập nhật cart-count bằng textContent.
+7. Giữ nguyên mọi id, class và cấu trúc cần thiết. Không sửa index.html, style.css, check.js hoặc các phần ngoài phạm vi B1.
+8. Đọc phần TODO B1 trong app.js và làm theo hướng dẫn tại đó.
+
+Sau khi sửa, hãy giải thích ngắn gọn từng thay đổi và hướng dẫn tôi kiểm tra: thêm T-shirt hai lần, thêm Tote bag đang Sold out, rồi nhấn Load more và thêm Belt. Không được khẳng định đã vượt qua kiểm thử nếu chưa thực sự chạy kiểm thử.
