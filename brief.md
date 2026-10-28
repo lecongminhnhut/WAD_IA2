@@ -1,12 +1,12 @@
-# IA#2 — Brief: Các prompt thực tế đã gửi cho AI
+# IA#2 — Brief: Actual Prompts Sent to AI
 
 ## Prompt 001 — Part A — Semantic HTML
 
-Ngày: 2026-10-28
+Date: 2026-10-28
 
-Phạm vi: Part A
+Scope: Part A
 
-Công cụ: Codex (GPT-5)
+Tool: Codex (GPT-5)
 
 Prompt:
 
@@ -41,11 +41,11 @@ Dừng lại và chờ tôi xác nhận trước khi làm B1.
 
 ## Prompt 002 — B1 — Add to Cart
 
-Ngày: 2026-10-28
+Date: 2026-10-28
 
-Phạm vi: B1 / kiểm thử
+Scope: B1 / testing
 
-Công cụ: Codex (GPT-5)
+Tool: Codex (GPT-5)
 
 Prompt:
 
@@ -65,11 +65,11 @@ Sau khi sửa, hãy giải thích ngắn gọn từng thay đổi và hướng d
 
 ## Prompt 003 — B2 — Filter as you type
 
-Ngày: 2026-10-28
+Date: 2026-10-28
 
-Phạm vi: B2 / kiểm thử
+Scope: B2 / testing
 
-Công cụ: Codex (GPT-5)
+Tool: Codex (GPT-5)
 
 Prompt:
 
@@ -89,11 +89,11 @@ Sau khi sửa, hướng dẫn tôi kiểm tra các từ khóa scarf, SCARF, chu�
 
 ## Prompt 004 — B3 — Prevent form reload
 
-Ngày: 2026-10-28
+Date: 2026-10-28
 
-Phạm vi: B3 / kiểm thử
+Scope: B3 / testing
 
-Công cụ: Codex (GPT-5)
+Tool: Codex (GPT-5)
 
 Prompt:
 
@@ -111,11 +111,11 @@ Hãy giải thích vì sao nhấn Enter có thể khiến trình duyệt submit 
 
 ## Prompt 005 — B4 — Cart total
 
-Ngày: 2026-10-28
+Date: 2026-10-28
 
-Phạm vi: B4 / kiểm thử
+Scope: B4 / testing
 
-Công cụ: Codex (GPT-5)
+Tool: Codex (GPT-5)
 
 Prompt:
 
