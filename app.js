@@ -51,7 +51,16 @@ catalogue.addEventListener('click', (event) => {
 
 function renderCart() {
   const itemCount = Object.values(cart).reduce((sum, quantity) => sum + quantity, 0);
+  let total = 0;
+
+  for (const [id, quantity] of Object.entries(cart)) {
+    const card = [...catalogue.querySelectorAll('.card')]
+      .find((productCard) => productCard.dataset.id === id);
+    if (card) total += quantity * Number(card.dataset.price);
+  }
+
   cartCount.textContent = String(itemCount);
+  cartTotal.textContent = ` · ${total.toLocaleString('vi-VN')} đ`;
 
   // Object.values(cart) gives [2, 1]; add them up. Use textContent.
 

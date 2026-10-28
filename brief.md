@@ -108,3 +108,25 @@ Yêu cầu:
 6. Chỉ sửa app.js.
 
 Hãy giải thích vì sao nhấn Enter có thể khiến trình duyệt submit form và tải lại trang. Sau khi sửa, hướng dẫn tôi nhập cap rồi nhấn Enter, kiểm tra URL không xuất hiện ?q=cap và số lượng giỏ hàng vẫn được giữ nguyên. Không tuyên bố đã kiểm thử thành công nếu chưa chạy thử.
+
+## Prompt 005 — B4 — Cart total
+
+Ngày: 2026-10-28
+
+Phạm vi: B4 / kiểm thử
+
+Công cụ: Codex (GPT-5)
+
+Prompt:
+
+Hoàn thiện phần B4 (stretch) trong hàm renderCart() của app.js.
+
+Yêu cầu:
+1. Tính tổng số sản phẩm bằng tổng các giá trị trong Object.values(cart).
+2. Tính tổng tiền bằng số lượng của từng sản phẩm nhân với giá tương ứng trong data-price.
+3. Chuyển dataset.price từ string sang Number trước khi tính toán.
+4. Cập nhật cart-count và cart-total bằng textContent.
+5. Định dạng tiền bằng total.toLocaleString('vi-VN') + ' đ'.
+6. Giữ nguyên cấu trúc dự án và chỉ sửa app.js.
+
+Hướng dẫn tôi kiểm tra bằng cách thêm T-shirt ba lần. Kết quả cần là Cart (3) · 540.000 đ. Kiểm tra thêm trường hợp nhiều loại sản phẩm và sản phẩm được thêm sau khi nhấn Load more. Giải thích cách xử lý trường hợp số lượng sản phẩm bằng 0.

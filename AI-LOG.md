@@ -9,6 +9,8 @@
 | 003 | 2026-10-28 | B2 / kiểm thử     | Codex (GPT-5), PowerShell, Chrome headless, Chrome DevTools Protocol | Chỉ hoàn thành B2 — Filter as you type                                                      | Sửa `app.js`: thêm lọc theo input, trim/lowercase, ẩn/hiện card, status bằng `textContent` và listener `input`                                                    | Không sửa `index.html`, `style.css`, `check.js` hoặc B1/B3/B4; không dùng `innerHTML`                   | Chrome DevTools Protocol: `scarf` và `SCARF` đều 1/8; rỗng hiện lại 8 card và status rỗng; sau Load more có 12 card; chuỗi HTML cho 0 kết quả, giữ nguyên status, 0 ảnh, 0 alert                                  | Chưa commit |
 | 004 | 2026-10-28 | B3 / kiểm thử     | Codex (GPT-5), PowerShell, Chrome headless, Chrome DevTools Protocol | Chỉ hoàn thành B3 — Prevent form reload                                                     | Sửa `app.js`: lấy form bằng `searchInput.form`, chặn `submit` bằng `event.preventDefault()`, gọi `applyFilter()`                                                  | Không sửa `index.html`, `style.css`, `check.js` hoặc B1/B2/B4                                           | Chrome DevTools Protocol: thêm T-shirt 2 lần, nhập `cap`, nhấn Enter; URL không có `?q=cap`, cart vẫn `2`, status `Showing 1 of 8 products`                                                                       | Chưa commit |
 
+| 005 | 2026-10-28 | B4 / kiểm thử | Codex (GPT-5), PowerShell, Chrome headless, Chrome DevTools Protocol | Hoàn thiện B4 trong `renderCart()`; tính tổng số sản phẩm và tổng tiền | Sửa `app.js`: cộng `Object.values(cart)`, tìm card theo ID, chuyển `dataset.price` bằng `Number()`, nhân số lượng với giá và ghi `cart-count`/`cart-total` bằng `textContent` | Không sửa `index.html`, `style.css`, `check.js` hoặc logic B1–B3 | T-shirt ×3 → `Cart (3) · 540.000 đ`; thêm Cap → `Cart (4) · 635.000 đ`; Load more + Belt → `Cart (5) · 775.000 đ`; giỏ rỗng → count `0`, total ` · 0 đ` | Chưa commit |
+
 ## Nhật ký chi tiết
 
 ### Lần tương tác 001 — Part A — Semantic HTML
@@ -111,3 +113,23 @@ Phương án từ chối: Không sửa `index.html`, `style.css`, `check.js`; kh
 Kiểm chứng: Chrome DevTools Protocol thêm T-shirt hai lần, nhập `cap`, phát sinh phím Enter. Kết quả: URL không có `?q=cap`; cart là `2`; status là `Showing 1 of 8 products`; form tồn tại.
 
 Lỗi phát hiện: Không phát hiện lỗi B3 trong kiểm thử thành công. Enter mặc định submit form vì input nằm trong form và trình duyệt thực hiện submit khi nhấn Enter; `preventDefault()` hủy hành vi tải lại và thay đổi URL mặc định.
+
+### Lần tương tác 005 — B4 — Cart total
+
+Ngày: 2026-10-28
+
+Phần: B4 / kiểm thử
+
+Công cụ: Codex (GPT-5), PowerShell, Chrome headless, Chrome DevTools Protocol
+
+Yêu cầu: Hoàn thiện B4 trong `renderCart()`, tính tổng số lượng bằng `Object.values(cart)`, tính tiền theo `quantity × Number(data-price)`, cập nhật hai phần tử bằng `textContent`, định dạng `vi-VN`, và kiểm tra T-shirt ×3, nhiều loại, Load more và giỏ rỗng.
+
+File đã thay đổi: `app.js`
+
+Nội dung thay đổi: `renderCart()` tính `itemCount`; duyệt các mục trong `cart`, tìm card tương ứng trong `#catalogue`, chuyển `dataset.price` sang số bằng `Number()`, cộng vào `total`, rồi ghi `cartCount.textContent` và `cartTotal.textContent`.
+
+Phương án từ chối: Không sửa `index.html`, `style.css`, `check.js`; không thay đổi logic B1–B3.
+
+Kiểm chứng: Chrome DevTools Protocol cho kết quả T-shirt ×3: `{count: "3", total: " · 540.000 đ"}`; thêm Cap: `{count: "4", total: " · 635.000 đ"}`; Load more và thêm Belt: `{count: "5", total: " · 775.000 đ", cards: 12}`; gọi `renderCart()` với giỏ rỗng: `{count: "0", total: " · 0 đ"}`.
+
+Lỗi phát hiện: Không phát hiện lỗi B4 trong kiểm thử thành công. Khi số lượng bằng 0, tổng các giá trị trong `cart` là 0 và tổng tiền được hiển thị là ` · 0 đ`.
