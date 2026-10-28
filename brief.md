@@ -86,3 +86,25 @@ Yêu cầu:
 8. Chỉ sửa app.js; giữ nguyên tất cả id, class, style.css và check.js.
 
 Sau khi sửa, hướng dẫn tôi kiểm tra các từ khóa scarf, SCARF, chuỗi rỗng và <img src=x onerror=alert(1)>. Giải thích vì sao trường hợp cuối không được chạy mã JavaScript.
+
+## Prompt 004 — B3 — Prevent form reload
+
+Ngày: 2026-10-28
+
+Phạm vi: B3 / kiểm thử
+
+Công cụ: Codex (GPT-5)
+
+Prompt:
+
+Tiếp tục từ code hiện tại. Chỉ hoàn thành B3 — Prevent form reload.
+
+Yêu cầu:
+1. Tìm form chứa searchInput thông qua searchInput.form.
+2. Đăng ký sự kiện submit trên form và gọi event.preventDefault().
+3. Gọi applyFilter() khi form được submit.
+4. Không làm mất trạng thái giỏ hàng khi nhấn Enter.
+5. Không thay đổi các id, class hoặc sửa style.css và check.js.
+6. Chỉ sửa app.js.
+
+Hãy giải thích vì sao nhấn Enter có thể khiến trình duyệt submit form và tải lại trang. Sau khi sửa, hướng dẫn tôi nhập cap rồi nhấn Enter, kiểm tra URL không xuất hiện ?q=cap và số lượng giỏ hàng vẫn được giữ nguyên. Không tuyên bố đã kiểm thử thành công nếu chưa chạy thử.
